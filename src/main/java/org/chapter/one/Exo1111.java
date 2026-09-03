@@ -1,6 +1,6 @@
 package org.chapter.one;
 
-public class Exo1 {
+public class Exo1111 {
   public static void main(String[] args) {
     System.out.println("Hello World!");
 
