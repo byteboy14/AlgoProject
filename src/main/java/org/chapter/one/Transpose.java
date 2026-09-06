@@ -16,4 +16,8 @@ public class Transpose {
     }
     return result;
   }
+
+  public static Integer[][] getTransposedArrayFrom(Integer[][] table) {
+    return new Transpose(table).getTransposedArrayFrom();
+  }
 }
