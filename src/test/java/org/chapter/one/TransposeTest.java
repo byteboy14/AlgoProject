@@ -1,9 +1,13 @@
 package org.chapter.one;
 
-import junit.framework.TestCase;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-public class TransposeTest extends TestCase {
+import static org.junit.jupiter.api.Assertions.*;
 
+public class TransposeTest {
+
+  @Test
   public void testGetTransposedArrayFrom_expect_content_transposed() {
 
     Integer[][] table = {
@@ -13,7 +17,7 @@ public class TransposeTest extends TestCase {
 
     Integer[][] result = new Transpose(table).getTransposedArrayFrom();
 
-    assertEquals(1, result[0][0].intValue());
+    Assertions.assertEquals(1, result[0][0].intValue());
     assertEquals(4, result[0][1].intValue());
 
     assertEquals(2, result[1][0].intValue());
@@ -24,6 +28,7 @@ public class TransposeTest extends TestCase {
 
   }
 
+  @Test
   public void testGetTransposedArrayFrom_expect_dimension_inverted() {
     Integer[][] table = {
         { 1, 2, 3 },
@@ -37,6 +42,7 @@ public class TransposeTest extends TestCase {
 
   }
 
+  @Test
   public void testBaseTableOperation() {
     int[][] table = {
         { 1, 2, 3 },
