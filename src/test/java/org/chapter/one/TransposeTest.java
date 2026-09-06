@@ -6,15 +6,31 @@ public class TransposeTest extends TestCase {
 
   public void testGetTransposedArrayFrom_expect_content_transposed() {
 
-  }
-
-  public void testGetTransposedArrayFrom_expect_dimention_inverted() {
     Integer[][] table = {
         { 1, 2, 3 },
         { 4, 5, 6 },
     };
 
-    Integer[][] result = new Transpose<Integer>(table).getTransposedArrayFrom();
+    Integer[][] result = new Transpose(table).getTransposedArrayFrom();
+
+    assertEquals(1, result[0][0].intValue());
+    assertEquals(4, result[0][1].intValue());
+
+    assertEquals(2, result[1][0].intValue());
+    assertEquals(5, result[1][1].intValue());
+
+    assertEquals(3, result[2][0].intValue());
+    assertEquals(6, result[2][1].intValue());
+
+  }
+
+  public void testGetTransposedArrayFrom_expect_dimension_inverted() {
+    Integer[][] table = {
+        { 1, 2, 3 },
+        { 4, 5, 6 },
+    };
+
+    Integer[][] result = new Transpose(table).getTransposedArrayFrom();
 
     assertEquals(3, result.length);
     assertEquals(2, result[0].length);
