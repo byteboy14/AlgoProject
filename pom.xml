@@ -28,4 +28,24 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.github.albilu</groupId>
+                <artifactId>test-watch-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <configuration>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                    <excludes>
+                        <exclude>**/target/**</exclude>
+                    </excludes>
+                    <testPattern>**/*Test.java</testPattern>
+                    <parallel>true</parallel>
+                    <smartSelection>true</smartSelection>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
