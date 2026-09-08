@@ -13,7 +13,7 @@ class LogarithmTest {
   }
 
   @ParameterizedTest
-  @CsvSource({ "2, 1" })
+  @CsvSource({ "2, 1", "4, 2", "8, 3", "16, 4", "32, 5", "1024 , 10" })
   void lg_2_expect_one(int input, int expected) {
     Assertions.assertEquals(expected, Logarithm.lg(input));
   }

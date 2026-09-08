@@ -6,8 +6,17 @@ public class Logarithm {
     if (n == 0)
       return null;
 
-    if (n == 2)
-      return 1;
-    return n;
+    return naive_lg(n);
+  }
+
+  private static Integer naive_lg(int n) {
+    int power = 1;
+    int naive_result = 2;
+    while (2 * naive_result <= n) {
+      power++;
+      naive_result = naive_result * 2;
+    }
+
+    return power;
   }
 }
