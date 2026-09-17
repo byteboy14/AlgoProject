@@ -31,4 +31,14 @@ class HistogramTest {
     assertEquals(expected, result[i]);
   }
 
+  @Test
+  void hg_expect_number_of_i_at_ith_entry() {
+    int[] entry = { 0, 0, 1, 2, 2 };
+    int[] result = Histogram.hg(entry, 3);
+
+    assertEquals(2, result[0]);
+    assertEquals(1, result[1]);
+    assertEquals(2, result[2]);
+  }
+
 }
