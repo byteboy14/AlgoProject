@@ -41,4 +41,33 @@ class HistogramTest {
     assertEquals(2, result[2]);
   }
 
+  @Test
+  void hg_expect_sum_of_1_entry_equal_to_entry_length() {
+    assertEquals(entry.length,
+        getSumOfArrayEntries(Histogram.hg(entry, 2)));
+
+    assertEquals(entry.length,
+        getSumOfArrayEntries(Histogram.hg(entry, 4)));
+
+  }
+
+  @Test
+  void hg_expect_sum_of_ith_entry_equal_to_entry_length() {
+    int[] entry = { 1, 2, 3, 3, 3 };
+    assertEquals(entry.length,
+        getSumOfArrayEntries(Histogram.hg(entry, 4)));
+
+    assertEquals(2,
+        getSumOfArrayEntries(Histogram.hg(entry, 3)));
+
+  }
+
+  private int getSumOfArrayEntries(int[] array) {
+    int result = 0;
+    for (int i = 0; i < array.length; i++) {
+      result += array[i];
+    }
+    return result;
+  }
+
 }
